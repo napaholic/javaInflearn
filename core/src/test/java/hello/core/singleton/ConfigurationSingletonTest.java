@@ -3,7 +3,7 @@ package hello.core.singleton;
 import hello.core.AppConfig;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemberServiceImpl;
-import hello.core.order.OrderServiceImpl;
+import hello.core.order.OrderServiceImplTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -14,7 +14,7 @@ public class ConfigurationSingletonTest {
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
         MemberServiceImpl memberService = ac.getBean("memberService", MemberServiceImpl.class);
-        OrderServiceImpl orderService = ac.getBean("orderService", OrderServiceImpl.class);
+        OrderServiceImplTest orderService = ac.getBean("orderService", OrderServiceImplTest.class);
         MemberRepository memberRepository = ac.getBean("memberRepository", MemberRepository.class);
 
         MemberRepository memberRepository1 = memberService.getMemberRepository();
