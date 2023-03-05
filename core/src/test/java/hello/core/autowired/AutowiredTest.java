@@ -1,4 +1,4 @@
-package hello.core.AutowiredTest;
+package hello.core.autowired;
 
 import hello.core.member.Member;
 import jakarta.annotation.Nullable;
