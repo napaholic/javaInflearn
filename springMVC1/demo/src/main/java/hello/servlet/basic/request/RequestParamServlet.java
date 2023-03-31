@@ -1,4 +1,4 @@
-package com.example.demo.basic.request;
+package hello.servlet.basic.request;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.Map;
 
 /*
  * HttpServletRequest 기본 사용법
@@ -29,7 +28,7 @@ public class RequestParamServlet extends HttpServlet {
 		System.out.println();
 
 		System.out.println("[단일 파라미터 조회]");
-		String username = request.getParameter("username");
+		String username = request.getParameter("postman");
 		String age = request.getParameter("age");
 
 		System.out.println("username = " + username);

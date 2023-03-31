@@ -1,4 +1,4 @@
-package com.example.demo.basic.request;
+package hello.servlet.basic.request;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -36,6 +36,7 @@ public class RequestHeaderServlet extends HttpServlet {
 		System.out.println("--- REQUEST-LINE - end ---");
 		System.out.println();
 	}
+
 	//Header 모든 정보
 	private void printHeaders(HttpServletRequest request) {
 		System.out.println("--- Headers - start ---");
@@ -53,7 +54,8 @@ public class RequestHeaderServlet extends HttpServlet {
 	}
 
 	//Header 편리한 조회
-	private void printHeaderUtils(HttpServletRequest request) { System.out.println("--- Header 편의 조회 start ---");
+	private void printHeaderUtils(HttpServletRequest request) {
+		System.out.println("--- Header 편의 조회 start ---");
 		System.out.println("[Host 편의 조회]");
 		System.out.println("request.getServerName() = " + request.getServerName()); //Host 헤더
 		System.out.println("request.getServerPort() = " + request.getServerPort()); //Host 헤더 System.out.println();
@@ -66,7 +68,8 @@ public class RequestHeaderServlet extends HttpServlet {
 		if (request.getCookies() != null) {
 			for (Cookie cookie : request.getCookies()) {
 				System.out.println(cookie.getName() + ": " + cookie.getValue());
-			} }
+			}
+		}
 		System.out.println();
 		System.out.println("[Content 편의 조회]");
 		System.out.println("request.getContentType() = " + request.getContentType());
@@ -76,7 +79,8 @@ public class RequestHeaderServlet extends HttpServlet {
 		System.out.println();
 	}
 
-	private void printEtc(HttpServletRequest request) { System.out.println("--- 기타 조회 start ---");
+	private void printEtc(HttpServletRequest request) {
+		System.out.println("--- 기타 조회 start ---");
 		System.out.println("[Remote 정보]");
 		System.out.println("request.getRemoteHost() = " +
 				request.getRemoteHost()); //
