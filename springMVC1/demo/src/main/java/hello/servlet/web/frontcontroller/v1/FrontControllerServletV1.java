@@ -29,5 +29,16 @@ public class FrontControllerServletV1 extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("FrontControllerServletV1.service");
+
+		// /front-controller/v1/members
+		String requestURI = req.getRequestURI();
+
+		ControllerV1 controller = controllerMap.get(requestURI);
+		if (controller == null) {
+			resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+			return;
+		}
+
+		controller.process(req, resp);
 	}
 }
