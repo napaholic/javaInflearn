@@ -11,7 +11,7 @@ import java.util.List;
 //Repository 어노테이션 사용시 스프링이 컴포넌트 스캔에 의해 스프링빈으로 등록되고 관리됨
 @Repository
 @RequiredArgsConstructor
-public class MemberRepository {ㄹ
+public class MemberRepository {
 
 	// @PersistenceContext 어노테이션을 사용하면 엔티티 매니저를 주입받을 수 있다.
 	private final EntityManager em;
