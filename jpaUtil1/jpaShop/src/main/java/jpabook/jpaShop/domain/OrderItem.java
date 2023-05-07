@@ -2,11 +2,15 @@ package jpabook.jpashop.domain;
 
 import jakarta.persistence.*;
 import jpabook.jpashop.domain.item.Item;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // 생성 메서드를 사용하므로 기본 생성자를 protected로 설정
+//jpa 에서 protected 생성자 선언시 만들어 놓은 생성방식 이외의 생성자를 사용할 수 없다.
 public class OrderItem {
 
 	@Id @GeneratedValue
